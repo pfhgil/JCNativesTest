@@ -3,28 +3,26 @@
 
 #pragma once
 #include "../../../library.h"
-#include "../../Memory/Allocators/Allocators.h"
+//#include "../../Memory/Allocators/Allocators.h"
 
-using glm::vec3;
+//using glm::vec3;
 
-namespace ECS
+namespace ECS::Transformations
 {
-    namespace Transformations
+    class TransformComponent
     {
+    public:
+        glm::vec3 position = glm::vec3();
+        glm::vec3 rotation = glm::vec3();
+        glm::vec3 scale = glm::vec3();
 
-        class TransformComponent
+        TransformComponent() = default;
+
+        ~TransformComponent()
         {
-        public:
-            //vec3* position = vec3Allocator->allocate(1);
-            //vec3* rotation = vec3Allocator->allocate(1);
-            //vec3* scale = vec3Allocator->allocate(1);
 
-            ~TransformComponent()
-            {
-
-            }
-        };
-    }
+        }
+    };
 }
 
 

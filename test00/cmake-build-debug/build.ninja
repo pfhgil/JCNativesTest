@@ -57,6 +57,14 @@ build CMakeFiles/test00.dir/Sources/ECS/Transformations/TransformComponent.cpp.o
   OBJECT_DIR = CMakeFiles\test00.dir
   OBJECT_FILE_DIR = CMakeFiles\test00.dir\Sources\ECS\Transformations
 
+build CMakeFiles/test00.dir/Sources/Memory/Allocators/IAllocator.cpp.obj: CXX_COMPILER__test00_Debug D$:/Pixelfield/NativeSungearEngine/test00/Sources/Memory/Allocators/IAllocator.cpp || cmake_object_order_depends_target_test00
+  DEFINES = -Dtest00_EXPORTS
+  DEP_FILE = CMakeFiles\test00.dir\Sources\Memory\Allocators\IAllocator.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -isystem D:/Pixelfield/NativeSungearEngine/test00/libs/glm
+  OBJECT_DIR = CMakeFiles\test00.dir
+  OBJECT_FILE_DIR = CMakeFiles\test00.dir\Sources\Memory\Allocators
+
 build CMakeFiles/test00.dir/Sources/Memory/Allocators/PoolAllocator.cpp.obj: CXX_COMPILER__test00_Debug D$:/Pixelfield/NativeSungearEngine/test00/Sources/Memory/Allocators/PoolAllocator.cpp || cmake_object_order_depends_target_test00
   DEFINES = -Dtest00_EXPORTS
   DEP_FILE = CMakeFiles\test00.dir\Sources\Memory\Allocators\PoolAllocator.cpp.obj.d
@@ -64,6 +72,14 @@ build CMakeFiles/test00.dir/Sources/Memory/Allocators/PoolAllocator.cpp.obj: CXX
   INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -isystem D:/Pixelfield/NativeSungearEngine/test00/libs/glm
   OBJECT_DIR = CMakeFiles\test00.dir
   OBJECT_FILE_DIR = CMakeFiles\test00.dir\Sources\Memory\Allocators
+
+build CMakeFiles/test00.dir/Sources/Utils/Utils.cpp.obj: CXX_COMPILER__test00_Debug D$:/Pixelfield/NativeSungearEngine/test00/Sources/Utils/Utils.cpp || cmake_object_order_depends_target_test00
+  DEFINES = -Dtest00_EXPORTS
+  DEP_FILE = CMakeFiles\test00.dir\Sources\Utils\Utils.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -isystem D:/Pixelfield/NativeSungearEngine/test00/libs/glm
+  OBJECT_DIR = CMakeFiles\test00.dir
+  OBJECT_FILE_DIR = CMakeFiles\test00.dir\Sources\Utils
 
 build CMakeFiles/test00.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj: CXX_COMPILER__test00_Debug D$:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp || cmake_object_order_depends_target_test00
   DEFINES = -Dtest00_EXPORTS
@@ -97,7 +113,7 @@ build CMakeFiles/test00.dir/libs/glm/glm/detail/glm.cpp.obj: CXX_COMPILER__test0
 #############################################
 # Link the shared library libtest00.dll
 
-build libtest00.dll libtest00.dll.a: CXX_SHARED_LIBRARY_LINKER__test00_Debug CMakeFiles/test00.dir/Sources/ECS/Transformations/TransformComponent.cpp.obj CMakeFiles/test00.dir/Sources/Memory/Allocators/PoolAllocator.cpp.obj CMakeFiles/test00.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj CMakeFiles/test00.dir/library.cpp.obj CMakeFiles/test00.dir/libs/glm/glm/detail/glm.cpp.obj
+build libtest00.dll libtest00.dll.a: CXX_SHARED_LIBRARY_LINKER__test00_Debug CMakeFiles/test00.dir/Sources/ECS/Transformations/TransformComponent.cpp.obj CMakeFiles/test00.dir/Sources/Memory/Allocators/IAllocator.cpp.obj CMakeFiles/test00.dir/Sources/Memory/Allocators/PoolAllocator.cpp.obj CMakeFiles/test00.dir/Sources/Utils/Utils.cpp.obj CMakeFiles/test00.dir/CMakeFiles/3.25.2/CompilerIdCXX/CMakeCXXCompilerId.cpp.obj CMakeFiles/test00.dir/library.cpp.obj CMakeFiles/test00.dir/libs/glm/glm/detail/glm.cpp.obj
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_FLAGS = -static-libgcc -static-libstdc++ -static
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -108,6 +124,40 @@ build libtest00.dll libtest00.dll.a: CXX_SHARED_LIBRARY_LINKER__test00_Debug CMa
   TARGET_FILE = libtest00.dll
   TARGET_IMPLIB = libtest00.dll.a
   TARGET_PDB = test00.dll.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test01
+
+
+#############################################
+# Order-only phony target for test01
+
+build cmake_object_order_depends_target_test01: phony || CMakeFiles/test01.dir
+
+build CMakeFiles/test01.dir/library.cpp.obj: CXX_COMPILER__test01_Debug D$:/Pixelfield/NativeSungearEngine/test00/library.cpp || cmake_object_order_depends_target_test01
+  DEP_FILE = CMakeFiles\test01.dir\library.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -isystem D:/Pixelfield/NativeSungearEngine/test00/libs/glm
+  OBJECT_DIR = CMakeFiles\test01.dir
+  OBJECT_FILE_DIR = CMakeFiles\test01.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test01
+
+
+#############################################
+# Link the executable test01.exe
+
+build test01.exe: CXX_EXECUTABLE_LINKER__test01_Debug CMakeFiles/test01.dir/library.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\test01.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test01.exe
+  TARGET_IMPLIB = libtest01.dll.a
+  TARGET_PDB = test01.exe.dbg
 
 
 #############################################
@@ -137,6 +187,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build test00: phony libtest00.dll
 
+build test01: phony test01.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -145,7 +197,7 @@ build test00: phony libtest00.dll
 #############################################
 # Folder: D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug
 
-build all: phony libtest00.dll
+build all: phony libtest00.dll test01.exe
 
 # =============================================================================
 # Built-in targets

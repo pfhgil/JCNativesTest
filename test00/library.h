@@ -1,17 +1,14 @@
 #ifndef TEST00_LIBRARY_H
 #define TEST00_LIBRARY_H
 
-#pragma once
+//#include "Sources/Utils/Utils.h"
 #include <jni.h>
-#include <cstdio>
-#include <iostream>
-
-#include <glm/vec3.hpp>
-#include <glm/mat4x4.hpp>
-
-void set_float_field(JNIEnv*& env, jobject& obj, const std::string& fieldName, const jfloat& val);
-
-#include "java_methods.h"
-//#include "java_methods.h"
+#include "Sources/Memory/Allocators/PoolAllocator.h"
+#include "Sources/Memory/Allocators/FrameAllocator.h"
+#include "Sources//Memory/Allocators/Allocators.h"
+#include <tuple>
+#include "JVector3f.h"
+#include "JNativeControl.h"
+#include "JPoolAllocator.h"
 
 #endif //TEST00_LIBRARY_H

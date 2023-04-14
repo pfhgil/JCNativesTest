@@ -314,6 +314,15 @@ test00_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 test00_SOURCE_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00
 
+//Value Computed by CMake
+test01_BINARY_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug
+
+//Value Computed by CMake
+test01_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+test01_SOURCE_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00
+
 
 ########################
 # INTERNAL cache entries

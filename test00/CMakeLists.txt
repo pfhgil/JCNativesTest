@@ -12,18 +12,19 @@ if (JNI_FOUND)
     message (STATUS "JNI_LIBRARIES=${JNI_LIBRARIES}")
 endif()
 
+
 set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
 
 set(glm_DIR libs/glm/cmake/glm)
 find_package(glm REQUIRED)
-
-#add_subdirectory(libs/glm)
-
-#target_link_libraries(test00 PUBLIC glm::glm)
 
 file(GLOB_RECURSE sources "*.h" "*.cpp" ".hpp")
 
 include_directories(${JNI_INCLUDE_DIRS} ${_classDir} ${_stubDir})
 add_library(test00 SHARED ${sources})
 target_link_libraries(test00 glm::glm)
+
+#add_library(test01 STATIC ${sources})
+add_executable(test01 library.cpp)
+target_link_libraries(test01 glm::glm)
 #target_include_directories(test00 libs/glm)

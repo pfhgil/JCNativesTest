@@ -12,32 +12,52 @@ public class Main
         System.loadLibrary("libtest00");
     }
 
-    public static class TransformComponent
+    public static class PoolAllocator
     {
+        private long pointer = 0x0;
+        private long byteSize;
+        private long maxRegionByteSize;
 
+        public PoolAllocator(long byteSize, long maxRegionSize)
+        {
+            this.byteSize = byteSize;
+            this.maxRegionByteSize = maxRegionSize;
+            pointer = create(this.byteSize, this.maxRegionByteSize);
+        }
+
+        private native long create(long byteSize, long maxRegionSize);
+
+        public long getPointer() { return pointer; }
     }
 
     public static class Vector3f
     {
         private long pointer = 0x0;
+        private long poolAllocatorPointer = 0x0;
 
-        public Vector3f()
+        public Vector3f(long poolAllocatorPointer)
         {
-           pointer = create();
+           pointer = create(poolAllocatorPointer);
+
+           this.poolAllocatorPointer = poolAllocatorPointer;
 
            n_x_y_z(pointer, 0f, 0f, 0f);
         }
 
-        public Vector3f(float x, float y, float z)
+        public Vector3f(long poolAllocatorPointer, float x, float y, float z)
         {
-            pointer = create();
+            pointer = create(poolAllocatorPointer);
+
+            this.poolAllocatorPointer = poolAllocatorPointer;
 
             n_x_y_z(pointer, x, y, z);
         }
 
-        public Vector3f(float v)
+        public Vector3f(long poolAllocatorPointer, float v)
         {
-            pointer = create();
+            pointer = create(poolAllocatorPointer);
+
+            this.poolAllocatorPointer = poolAllocatorPointer;
 
             n_x_y_z(pointer, v, v, v);
         }
@@ -59,11 +79,11 @@ public class Main
 
         public native void doCrazy();
 
-        public void memFree() { n_memFree(pointer); }
+        public void memFree(long poolAllocatorPointer) { n_memFree(poolAllocatorPointer, pointer); }
 
-        private native long create();
+        private native long create(long poolAllocatorPointer);
 
-        private native void n_memFree(long pointer);
+        private native void n_memFree(long poolAllocatorPointer, long pointer);
 
         private native float n_x(long pointer);
         private native void n_x(long pointer, float val);
@@ -80,84 +100,50 @@ public class Main
         public long getPointer() { return pointer; }
     }
 
-    public static class Vector3f_j
-    {
-        public float x;
-        public float y;
-        public float z;
-
-        public Vector3f_j()
-        {
-
-        }
-
-        public Vector3f_j(float x, float y, float z)
-        {
-           this.x = x;
-           this.y = y;
-           this.z = z;
-        }
-
-        public Vector3f_j(float v)
-        {
-            x = y = z = v;
-        }
-
-        public void doCrazy()
-        {
-            int k = 0;
-            for(int i = 0; i < 100000; i++)
-            {
-                k += i;
-            }
-        }
-
-        @Override
-        public String toString()
-        {
-            return x + ", "  + y + ", " + z;
-        }
-    }
-
-
     public static void main(String[] args)
     {
 
         System.out.println("Hello world!");
 
-        final int size = 10;
+        final int size = 1000;
 
+        PoolAllocator firstPoolAllocator = new PoolAllocator(96, 12);
+        System.out.println("fptr: " + firstPoolAllocator.getPointer());
+        PoolAllocator secondPoolAllocator = new PoolAllocator(1024 * 1024, 12);
+        System.out.println("sptr: " + secondPoolAllocator.getPointer());
+
+        Vector3f firstVec = new Vector3f(firstPoolAllocator.getPointer(), 10);
+        Vector3f secondVec = new Vector3f(secondPoolAllocator.getPointer(), 20);
+
+        firstVec.memFree(secondPoolAllocator.getPointer());
+        secondVec.memFree(firstPoolAllocator.getPointer());
+
+        firstVec.memFree(firstPoolAllocator.getPointer());
+        secondVec.memFree(secondPoolAllocator.getPointer());
+                /*
         List<Vector3f> vectors = new ArrayList<>();
-        for(int i = 0; i < 10; i++) {
-            Vector3f vec = new Vector3f(10);
-            System.out.println(vec);
+        for(int i = 0; i < size; i++) {
+            Vector3f vec = new Vector3f(10, 10);
+            vec.memFree();
+            //System.out.println(vec);
             vectors.add(vec);
         }
 
-        for(int i = 0; i < 10; i++) {
-            Vector3f vec = vectors.get(i);
-            vec.memFree();
-            System.out.println(vec);
-        }
+                 */
 
-        for(int i = 0; i < 10; i++) {
-            vectors.set(i, new Vector3f());
-            Vector3f vec = vectors.get(i);
-            System.out.println(vec);
-        }
+        SingletonExample.getInstance().setBar("hello world!");
+        SingletonExample.getInstance().setFoo(18);
 
-        //Scanner s = new Scanner(System.in);
-        //s.next();
+        System.out.println(SingletonExample.getInstance());
 
-        /*
-        List<Vector3f_j> vectors = new ArrayList<>();
+        System.out.println("filled");
 
-        for(int i = 0; i < 100000; i++) {
-            Vector3f_j v = new Vector3f_j();
-            v.doCrazy();
-            vectors.add(v);
-        }
+        Scanner s = new Scanner(System.in);
 
-         */
+        s.next();
+
+        NativeControl.freeVec3Allocator(secondPoolAllocator.getPointer());
+
+        s.next();
     }
 }

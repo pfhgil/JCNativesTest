@@ -18,18 +18,18 @@ JNIEXPORT void JNICALL Java_org_example_Main_00024Vector3f_doCrazy
 /*
  * Class:     org_example_Main_Vector3f
  * Method:    create
- * Signature: ()J
+ * Signature: (J)J
  */
 JNIEXPORT jlong JNICALL Java_org_example_Main_00024Vector3f_create
-  (JNIEnv *, jobject);
+  (JNIEnv *, jobject, jlong);
 
 /*
  * Class:     org_example_Main_Vector3f
  * Method:    n_memFree
- * Signature: (J)V
+ * Signature: (JJ)V
  */
 JNIEXPORT void JNICALL Java_org_example_Main_00024Vector3f_n_1memFree
-  (JNIEnv *, jobject, jlong);
+  (JNIEnv *, jobject, jlong, jlong);
 
 /*
  * Class:     org_example_Main_Vector3f
