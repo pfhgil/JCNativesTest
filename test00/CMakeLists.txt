@@ -24,7 +24,5 @@ include_directories(${JNI_INCLUDE_DIRS} ${_classDir} ${_stubDir})
 add_library(test00 SHARED ${sources})
 target_link_libraries(test00 glm::glm)
 
-#add_library(test01 STATIC ${sources})
 add_executable(test01 library.cpp)
 target_link_libraries(test01 glm::glm)
-#target_include_directories(test00 libs/glm)

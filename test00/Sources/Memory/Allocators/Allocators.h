@@ -6,11 +6,13 @@
 
 #pragma once
 
-#include <glm/vec3.hpp>
-#include "PoolAllocator.h"
+#include "../../ECS/Transformations/TransformComponent.h"
 
-//Memory::Allocators::PoolAllocator<glm::vec3>* vec3PoolAllocator = new Memory::Allocators::PoolAllocator<glm::vec3>(sizeof(glm::vec3) * 10000000);
-// чисто для теста. следует убратъ
-//Memory::Allocators::PoolAllocator<glm::vec3>* vec3PoolAllocator2 = new Memory::Allocators::PoolAllocator<glm::vec3>(sizeof(glm::vec3) * 10000000);
+using Memory::Allocators::FrameAllocator;
+using Memory::Allocators::PoolAllocator;
+
+// 5 мегабайте на разные вычисления в стеках и тд
+//FrameAllocator* global_frame_allocator = new FrameAllocator(1024 * 1024 * 10);
+//PoolAllocator* transform_component_pool_allocator = new PoolAllocator(1024 * 1024 * 500, sizeof(ECS::Transformations::TransformComponent));
 
 #endif //TEST00_ALLOCATORS_H

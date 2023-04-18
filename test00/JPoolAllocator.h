@@ -17,8 +17,8 @@ extern "C" {
 
 JNIEXPORT jlong JNICALL Java_org_example_Main_00024PoolAllocator_create(JNIEnv* env, jobject calledFrom, jlong byteSize, jlong maxRegionByteSize)
 {
-    auto* poolAllocatorPtr = new Memory::Allocators::PoolAllocator(byteSize, maxRegionByteSize);
-    return reinterpret_cast<jlong>(poolAllocatorPtr);
+    //auto* poolAllocatorPtr = new Memory::Allocators::PoolAllocator(byteSize, maxRegionByteSize);
+    //return reinterpret_cast<jlong>(poolAllocatorPtr);
 }
 
 #ifdef __cplusplus

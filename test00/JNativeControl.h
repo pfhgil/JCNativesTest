@@ -12,7 +12,7 @@ extern "C" {
 
 JNIEXPORT void JNICALL Java_org_example_NativeControl_freeVec3Allocator(JNIEnv *, jclass, jlong jpoolAllocatorPtr)
 {
-    reinterpret_cast<Memory::Allocators::PoolAllocator*>(jpoolAllocatorPtr)->free();
+    delete reinterpret_cast<Memory::Allocators::PoolAllocator*>(jpoolAllocatorPtr);
     //vec3PoolAllocator->free();
     //
 }

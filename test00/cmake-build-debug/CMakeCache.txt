@@ -159,21 +159,6 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=test00
 
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.9.9
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=9
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=9
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_TWEAK:STATIC=
-
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=D:/Programming/JetBrains/apps/CLion/ch-0/231.8109.222/bin/mingw/bin/ranlib.exe
 
@@ -291,21 +276,6 @@ Java_JAVAH_EXECUTABLE:FILEPATH=Java_JAVAH_EXECUTABLE-NOTFOUND
 Java_JAVA_EXECUTABLE:FILEPATH=C:/Program Files/Java/jdk-17/bin/java.exe
 
 //Value Computed by CMake
-glm_BINARY_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug
-
-//The directory containing a CMake configuration file for glm.
-glm_DIR:PATH=glm_DIR-NOTFOUND
-
-//Value Computed by CMake
-glm_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-glm_SOURCE_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00
-
-//The directory containing a CMake configuration file for library.
-library_DIR:PATH=library_DIR-NOTFOUND
-
-//Value Computed by CMake
 test00_BINARY_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug
 
 //Value Computed by CMake
@@ -313,15 +283,6 @@ test00_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 test00_SOURCE_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00
-
-//Value Computed by CMake
-test01_BINARY_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug
-
-//Value Computed by CMake
-test01_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-test01_SOURCE_DIR:STATIC=D:/Pixelfield/NativeSungearEngine/test00
 
 
 ########################
@@ -512,6 +473,4 @@ Java_JAVAH_EXECUTABLE-ADVANCED:INTERNAL=1
 Java_JAVA_EXECUTABLE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
-//ADVANCED property for variable: glm_DIR
-glm_DIR-ADVANCED:INTERNAL=1
 

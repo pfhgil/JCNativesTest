@@ -32,21 +32,6 @@ namespace Memory::Allocators
         region_ptr start_region = nullptr;
         region_ptr end_region = nullptr;
 
-        //virtual void allocate_mem_block(size_t byte_size) = 0;
-
-    public:
-        IAllocator() = default;
-
-        virtual ~IAllocator() = default;
-
-        /*
-        virtual void* allocate(size_t object_byte_size) = 0;
-
-        virtual void deallocate(void* obj_ptr) = 0;
-
-        virtual void free() = 0;
-         */
-
         void free()
         {
             size_t start_pagefile_usage;
@@ -72,6 +57,21 @@ namespace Memory::Allocators
 
             std::cout << "dif vm: " << pagefile_dif << ", set: " << res_dif << std::endl;
         }
+
+        //virtual void allocate_mem_block(size_t byte_size) = 0;
+
+    public:
+        IAllocator() = default;
+
+        virtual ~IAllocator() = default;
+
+        //template <typename T, typename... Params>
+        //T* allocate(Params&&...) {};
+
+        //virtual void deallocate(void* obj_ptr) = 0;
+
+        //virtual void free() = 0;
+
 
         [[nodiscard]] inline size_t get_total_elements_count() const noexcept { return this->total_elements_count; }
 

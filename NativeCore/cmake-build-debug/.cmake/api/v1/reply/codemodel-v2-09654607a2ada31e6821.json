@@ -1,0 +1,151 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "libs/glfw",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.glfw-Debug-a110b2712e9e4ba3798d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "libs/glfw",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "libs/glfw/src",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-libs.glfw.src-Debug-ad7d1517eb9fdd57c003.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "libs/glfw/src",
+					"targetIndexes" : 
+					[
+						2,
+						4
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "NativeCore",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						2,
+						3,
+						4
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "NativeCore::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NativeCore-Debug-10425aafd4827a4c185c.json",
+					"name" : "NativeCore",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NativeCoreTest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NativeCoreTest-Debug-2868feda0f130315119b.json",
+					"name" : "NativeCoreTest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "glfw::@9d94ad66e13f8aab41f7",
+					"jsonFile" : "target-glfw-Debug-95bcb48b4f297da6b71c.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@6746522484b1c52deeae",
+					"jsonFile" : "target-uninstall-Debug-bdaf129a6e95b1a090fe.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "update_mappings::@9d94ad66e13f8aab41f7",
+					"jsonFile" : "target-update_mappings-Debug-3c66867cc03ae6bdc127.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug",
+		"source" : "D:/Pixelfield/NativeSungearEngine/NativeCore"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

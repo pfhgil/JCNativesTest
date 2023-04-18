@@ -23,6 +23,9 @@ namespace Memory::Allocators
             this->free_region = reinterpret_cast<region>(malloc(this->total_byte_size));
 
             this->start_region = this->free_region;
+
+            // old version
+            /*
             region current_region = this->free_region;
 
             for(int i = 0; i < this->total_elements_count; i++)
@@ -38,6 +41,14 @@ namespace Memory::Allocators
 
             current_region->next = nullptr;
             this->end_region = current_region;
+             */
+
+            // reinterpret_cast<char*>(current_region) используется, чтобы к адресу прибавилось именно значение max_region_byte_size
+            // например наш изначальный адрес был 0x01 мы хотим прибавить к адресу 8 байт, чтобы получить 0x09
+            // если не сделать reinterpret_cast<char*>(current_region), то к нашему адресу прибавится sizeof(тип указателя (например double)) * max_region_byte_size
+            // поэтому мы переводим в указатель на char, чтобы к нашему адресу прибавлялось sizeof(char) * max_region_byte_size
+            // sizeof(char) - 1 байт
+            this->end_region = reinterpret_cast<region>(reinterpret_cast<char*>(this->start_region) + this->total_byte_size);
 
             std::cout << "pool allocator mem block ptr: " << this->free_region << ", end: " << this->end_region
                       << ". pool allocator size: " << this->total_byte_size << ". max region_ptr size: " << this->max_region_byte_size << ". count: "
@@ -45,7 +56,7 @@ namespace Memory::Allocators
         };
 
     public:
-        PoolAllocator(const size_t& byte_size, size_t max_region_byte_size)
+        PoolAllocator(const size_t& byte_size, size_t max_region_byte_size) : IAllocator()
         {
             this->max_region_byte_size = max_region_byte_size;
             this->total_elements_count = byte_size / max_region_byte_size;
@@ -63,6 +74,11 @@ namespace Memory::Allocators
         template <typename T, typename... Params>
         T* allocate(Params&&... params)
         {
+            if(!this->start_region)
+            {
+                allocate_mem_block(this->total_byte_size);
+            }
+
             if(this->free_region == this->end_region || (this->free_region + sizeof(T)) > (this->free_region + this->max_region_byte_size))
             {
                 std::cout << "Error: Pool allocator out of bounds! The last pointer is returned. Before: "
@@ -71,13 +87,16 @@ namespace Memory::Allocators
                 return reinterpret_cast<T*>(this->free_region);
             }
 
-            AllocatorRegion* current_free_region = this->free_region;
+            region current_free_region = this->free_region;
 
+            this->free_region->next = reinterpret_cast<region>(reinterpret_cast<char*>(current_free_region) + this->max_region_byte_size);
             this->free_region = this->free_region->next;
 
+            /*
             std::cout << "pool allocator allocated chunk: " << current_free_region << ", next: "
             << current_free_region->next << ", elements count: " << this->elements_count << ", end: "
             << this->end_region << std::endl;
+             */
 
             this->elements_count++;
 
@@ -120,10 +139,16 @@ namespace Memory::Allocators
 
             this->free_region = obj_region;
 
-            std::cout << "pool allocator current chunk (after deallocate): " << this->free_region << std::endl;
+            //std::cout << "pool allocator current chunk (after deallocate): " << this->free_region << std::endl;
 
             this->elements_count--;
         };
+
+        void deallocate_mem_block()
+        {
+            this->free_region = this->start_region;
+            this->elements_count = 0;
+        }
     };
 }
 
