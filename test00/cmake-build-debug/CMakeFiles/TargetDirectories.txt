@@ -1,4 +1,4 @@
-D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug/CMakeFiles/test00.dir
-D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug/CMakeFiles/test01.dir
-D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Pixelfield/NativeSungearEngine/test00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Pixelfield/NativeSungearEngine/JCNativesTest/test00/cmake-build-debug/CMakeFiles/test00.dir
+D:/Pixelfield/NativeSungearEngine/JCNativesTest/test00/cmake-build-debug/CMakeFiles/test01.dir
+D:/Pixelfield/NativeSungearEngine/JCNativesTest/test00/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Pixelfield/NativeSungearEngine/JCNativesTest/test00/cmake-build-debug/CMakeFiles/rebuild_cache.dir
