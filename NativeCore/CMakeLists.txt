@@ -21,31 +21,26 @@ set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
 set(glm_DIR libs/glm/cmake/glm)
 find_package(glm REQUIRED)
 
-#set(glm_DIR libs/glfw/cmake-build-debug/src)
-#find_package(glfw3 REQUIRED)
-
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(libs/glfw)
-#add_subdirectory(libs/imgui)
-#set(glm_DIR ../../libs/glfw)
-#add_library(../../libs/glfw/glfw3)
+
+add_subdirectory(libs/graphics/ogl/v46)
+
+message(STATUS ${CMAKE_CURRENT_BINARY_DIR})
 
 file(GLOB_RECURSE sources "Sources/*.h" "Sources/*.cpp" "Sources/*.hpp")
-message(STATUS ${sources})
 
 include_directories(${JNI_INCLUDE_DIRS} ${_classDir} ${_stubDir})
 
 add_library(NativeCore SHARED ${sources})
 target_link_libraries(NativeCore glfw)
 target_link_libraries(NativeCore glm::glm)
-#target_link_libraries(NativeCore imgui::imgui)
+target_link_libraries(NativeCore gl46)
 
-#project(NativeCoreTest)
 add_executable(NativeCoreTest Sources/Core/Main/CoreTest.cpp)
-#target_link_libraries(NativeCoreTest libNativeCore.dll)
 target_link_libraries(NativeCoreTest glfw)
 target_link_libraries(NativeCoreTest glm::glm)
-#target_link_libraries(NativeCoreTest imgui::imgui)
+target_link_libraries(NativeCoreTest gl46)

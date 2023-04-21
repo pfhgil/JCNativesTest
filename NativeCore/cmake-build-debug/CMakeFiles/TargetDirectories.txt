@@ -21,3 +21,10 @@ D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/glfw/src/CMa
 D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/glfw/src/CMakeFiles/install.dir
 D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/glfw/src/CMakeFiles/install/local.dir
 D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/glfw/src/CMakeFiles/install/strip.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/gl46.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/edit_cache.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/rebuild_cache.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/list_install_components.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/install.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/install/local.dir
+D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/libs/graphics/ogl/v46/CMakeFiles/install/strip.dir

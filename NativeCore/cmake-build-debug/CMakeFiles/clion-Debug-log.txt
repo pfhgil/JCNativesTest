@@ -4,7 +4,7 @@ D:\Programming\JetBrains\apps\CLion\ch-0\231.8109.222\bin\cmake\win\x64\bin\cmak
 -- JNI_LIBRARIES=C:/Program Files/Java/jdk-17/lib/jawt.lib;C:/Program Files/Java/jdk-17/lib/jvm.lib
 -- dfsdf
 -- Using Win32 for window creation
--- D:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/Core.cppD:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/Core.hD:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/CoreTest.cppD:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/CoreTest.h
+-- D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug
 -- Configuring done
 -- Generating done
 -- Build files have been written to: D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug
