@@ -2,6 +2,8 @@
 // Created by stuka on 21.04.2023.
 //
 
+#pragma once
+
 #ifndef NATIVECORE_IRENDERER_H
 #define NATIVECORE_IRENDERER_H
 
@@ -19,7 +21,7 @@ namespace Core::Graphics::API::Base
     class IFrameBuffer
     {
     public:
-
+        byte a[3072], b[3072], c[2300];
     };
 
     class IIndexBuffer

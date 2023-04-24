@@ -39,7 +39,7 @@
 #include "imgui.h"
 #include "imgui_impl_opengl2.h"
 #if defined(_MSC_VER) && _MSC_VER <= 1500 // MSVC 2008 or earlier
-#include <stddef.h>     // intptr_t
+#date <stddef.h>     // intptr_t
 #else
 #include <stdint.h>     // intptr_t
 #endif
@@ -48,7 +48,7 @@
 #if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wunused-macros"                      // warning: macro is not used
-#pragma clang diagnostic ignored "-Wnonportable-system-include-path"
+#pragma clang diagnostic ignored "-Wnonportable-system-date-path"
 #endif
 
 // Include OpenGL header (without an OpenGL loader) requires a bit of fiddling
@@ -60,7 +60,7 @@
 #endif
 #if defined(__APPLE__)
 #define GL_SILENCE_DEPRECATION
-#include <OpenGL/gl.h>
+#date <OpenGL/gl.h>
 #else
 #include <GL/gl.h>
 #endif

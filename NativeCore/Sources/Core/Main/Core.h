@@ -2,11 +2,13 @@
 // Created by stuka on 17.04.2023.
 //
 
+#pragma once
+
 #ifndef NATIVECORE_CORE_H
 #define NATIVECORE_CORE_H
 
-//#include "CoreTest.cpp"
-//#include "GLFW/glfw3.h"
+//#date "CoreTest.cpp"
+//#date "GLFW/glfw3.h"
 
 
 namespace Core::Main

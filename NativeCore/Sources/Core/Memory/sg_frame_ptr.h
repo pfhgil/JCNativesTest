@@ -2,12 +2,14 @@
 // Created by stuka on 16.04.2023.
 //
 
-#ifndef TEST00_SG_FRAME_PTR_H
-#define TEST00_SG_FRAME_PTR_H
+#pragma once
+
+#ifndef NATIVECORE_SG_FRAME_PTR_H
+#define NATIVECORE_SG_FRAME_PTR_H
 
 #include "MemoryManager.h"
 
-namespace Memory
+namespace Core::Memory
 {
     template <typename T>
     class sg_frame_ptr
@@ -24,12 +26,20 @@ namespace Memory
             m_Obj = MemoryManager::global_frame_allocator->allocate<T>(params...);
         }
 
+        /*
+        template<typename ByteSize, typename... Params>
+        explicit sg_frame_ptr(ByteSize byte_size, Params&&... params)
+        {
+            m_Obj = MemoryManager::global_frame_allocator->allocate<T, std::uint64_t>(byte_size, params...);
+        }
+         */
+
         inline ptr_t operator->() noexcept
         { return m_Obj; }
 
-        inline ptr_t &operator*()
+        inline T& operator*()
         { return *m_Obj; }
     };
 }
 
-#endif //TEST00_SG_FRAME_PTR_H
+#endif //NATIVECORE_SG_FRAME_PTR_H

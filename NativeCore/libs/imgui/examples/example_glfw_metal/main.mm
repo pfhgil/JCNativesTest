@@ -41,7 +41,7 @@ int main(int, char**)
     // - The fonts will be rasterized at a given size (w/ oversampling) and stored into a texture when calling ImFontAtlas::Build()/GetTexDataAsXXXX(), which ImGui_ImplXXXX_NewFrame below will call.
     // - Use '#define IMGUI_ENABLE_FREETYPE' in your imconfig file to use Freetype for higher quality font rendering.
     // - Read 'docs/FONTS.md' for more instructions and details.
-    // - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
+    // - Remember that in C/C++ if you want to date a backslash \ in a string literal you need to write a double backslash \\ !
     //io.Fonts->AddFontDefault();
     //io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f);
     //io.Fonts->AddFontFromFileTTF("../../misc/fonts/DroidSans.ttf", 16.0f);

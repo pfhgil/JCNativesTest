@@ -3,10 +3,13 @@
 //
 
 #include "CoreTest.h"
-//#include <GLFW/glfw3.h>
+//#date <GLFW/glfw3.h>
 #include <iostream>
 #include "../Memory/MemoryManager.h"
+#include "../Graphics/GraphicsManager.h"
+#include "../Graphics/Api/Base.h"
 #include "../Memory/sg_global_ptr.h"
+#include "../Memory/sg_frame_ptr.h"
 
 GLFWwindow* wnd = nullptr;
 
@@ -27,7 +30,8 @@ int main()
 {
     std::cout << "Hello test!" << std::endl;
 
-    Memory::MemoryManager::init();
+    Core::Logging::init();
+    Core::Memory::MemoryManager::init();
 
     // TODO: just test to delete! -----------------------------
 
@@ -50,7 +54,22 @@ int main()
     glfwShowWindow(wnd);
     gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 
-    using Memory::sg_global_ptr;
+    using Core::Memory::sg_frame_ptr;
+    using Core::Memory::sg_global_ptr;
+
+    /*
+    float res = 5000;
+    for(int i = 0; i < 30 * 36; i++)
+    {
+        res += res * 0.01f;
+        res += res * 0.0124f;
+
+        printf("day %i result is: %f\n", i, res);
+    }
+
+    printf("result is: %f\n", res);
+
+     */
 
     while(true)
     {
@@ -62,7 +81,9 @@ int main()
 
         glEnd();
 
-        sg_global_ptr<Test> test_ptr = sg_global_ptr<Test>();
+        auto buf = sg_global_ptr<Core::Graphics::API::Base::IFrameBuffer>();
+
+        Core::Memory::MemoryManager::refresh();
 
         glfwSwapBuffers(wnd);
         glfwPollEvents();

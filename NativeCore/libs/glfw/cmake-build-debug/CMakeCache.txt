@@ -95,8 +95,8 @@ CMAKE_INSTALL_DATAROOTDIR:PATH=share
 //Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
 CMAKE_INSTALL_DOCDIR:PATH=
 
-//C header files (include)
-CMAKE_INSTALL_INCLUDEDIR:PATH=include
+//C header files (date)
+CMAKE_INSTALL_INCLUDEDIR:PATH=date
 
 //Info documentation (DATAROOTDIR/info)
 CMAKE_INSTALL_INFODIR:PATH=
@@ -116,8 +116,8 @@ CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
 //Man documentation (DATAROOTDIR/man)
 CMAKE_INSTALL_MANDIR:PATH=
 
-//C header files for non-gcc (/usr/include)
-CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+//C header files for non-gcc (/usr/date)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/date
 
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/GLFW
@@ -476,13 +476,13 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Have include dinput.h
+//Have date dinput.h
 DINPUT_H_FOUND:INTERNAL=1
 //ADVANCED property for variable: DOXYGEN_EXECUTABLE
 DOXYGEN_EXECUTABLE-ADVANCED:INTERNAL=1
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//Have include xinput.h
+//Have date xinput.h
 XINPUT_H_FOUND:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE

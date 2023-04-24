@@ -2,14 +2,17 @@
 // Created by stuka on 12.04.2023.
 //
 
+#pragma once
+
 #ifndef NATIVECORE_IALLOCATOR_H
 #define NATIVECORE_IALLOCATOR_H
 
-#pragma once
 #include <iostream>
-#include "../Utils.h"
 
-namespace Memory::Allocators
+#include "../Utils.h"
+#include "../../Logging/Log.h"
+
+namespace Core::Memory::Allocators
 {
     struct AllocatorRegion
     {
@@ -34,27 +37,24 @@ namespace Memory::Allocators
 
         void free()
         {
+            using namespace Core::Memory::Utils;
+
             size_t start_pagefile_usage;
             size_t start_resident_set;
 
             size_t end_pagefile_usage;
             size_t end_resident_set;
 
-            Utils::get_megabyte_process_mem_usage(start_pagefile_usage, start_resident_set);
-
-            std::cout << "before delete allocator size (start_pagefile_usage): " << start_pagefile_usage << ", resident: " << start_resident_set << std::endl;
+            get_megabyte_process_mem_usage(start_pagefile_usage, start_resident_set);
 
             delete this->start_region;
 
-            Utils::get_megabyte_process_mem_usage(end_pagefile_usage, end_resident_set);
-
-            std::cout << "after delete allocator size (end_pagefile_usage): " << end_pagefile_usage << ", resident: " << end_resident_set
-                      << "\n";
+            get_megabyte_process_mem_usage(end_pagefile_usage, end_resident_set);
 
             size_t pagefile_dif = start_pagefile_usage - end_pagefile_usage;
             size_t res_dif = start_resident_set - end_resident_set;
 
-            std::cout << "dif vm: " << pagefile_dif << ", set: " << res_dif << std::endl;
+            Core::Logging::c_printf(Core::Logging::MessageType::MT_INFO,"Allocator deallocated: %llu", res_dif);
         }
 
         //virtual void allocate_mem_block(size_t byte_size) = 0;

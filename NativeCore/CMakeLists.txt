@@ -17,6 +17,7 @@ if (JNI_FOUND)
 endif()
 
 set(CMAKE_SHARED_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
+set(CMAKE_BUILD_TYPE "Debug")
 
 set(glm_DIR libs/glm/cmake/glm)
 find_package(glm REQUIRED)
@@ -26,12 +27,13 @@ set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(libs/glfw)
-
 add_subdirectory(libs/graphics/ogl/v46)
 
 message(STATUS ${CMAKE_CURRENT_BINARY_DIR})
 
-file(GLOB_RECURSE sources "Sources/*.h" "Sources/*.cpp" "Sources/*.hpp")
+file(GLOB_RECURSE sources "Sources/*.cpp")
+
+message(STATUS ${sources})
 
 include_directories(${JNI_INCLUDE_DIRS} ${_classDir} ${_stubDir})
 
@@ -40,7 +42,7 @@ target_link_libraries(NativeCore glfw)
 target_link_libraries(NativeCore glm::glm)
 target_link_libraries(NativeCore gl46)
 
-add_executable(NativeCoreTest Sources/Core/Main/CoreTest.cpp)
+add_executable(NativeCoreTest ${sources})
 target_link_libraries(NativeCoreTest glfw)
 target_link_libraries(NativeCoreTest glm::glm)
 target_link_libraries(NativeCoreTest gl46)

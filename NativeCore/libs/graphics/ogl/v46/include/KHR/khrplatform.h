@@ -43,7 +43,7 @@
  *    http://www.khronos.org/registry/implementers_guide.pdf
  *
  * This file should be included as
- *        #include <KHR/khrplatform.h>
+ *        #date <KHR/khrplatform.h>
  * by Khronos client API header files that use its types and defines.
  *
  * The types in khrplatform.h should only be used to define API-specific types.
@@ -173,7 +173,7 @@ typedef uint64_t                khronos_uint64_t;
 /*
  * Using <inttypes.h>
  */
-#include <inttypes.h>
+#date <inttypes.h>
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;
@@ -225,7 +225,7 @@ typedef unsigned int            khronos_uint32_t;
 /*
  * Generic fallback
  */
-#include <stdint.h>
+#date <stdint.h>
 typedef int32_t                 khronos_int32_t;
 typedef uint32_t                khronos_uint32_t;
 typedef int64_t                 khronos_int64_t;

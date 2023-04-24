@@ -1,10 +1,10 @@
 Performing C SOURCE FILE Test JNI_INCLUDE_PATH2_OPTIONAL failed with the following output:
-Change Dir: D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ofg8ja
+Change Dir: D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ckmlz0
 
-Run Build Command(s):D:/Programming/JetBrains/apps/CLion/ch-0/231.8109.222/bin/ninja/win/x64/ninja.exe cmTC_a4597 && [1/2] Building C object CMakeFiles/cmTC_a4597.dir/src.c.obj
-FAILED: CMakeFiles/cmTC_a4597.dir/src.c.obj 
-D:\Programming\JetBrains\apps\CLion\ch-0\231.8109.222\bin\mingw\bin\gcc.exe -DJNI_INCLUDE_PATH2_OPTIONAL -I"C:/Program Files/Java/jdk-17/include"  -o CMakeFiles/cmTC_a4597.dir/src.c.obj -c D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ofg8ja/src.c
-In file included from D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ofg8ja/src.c:2:
+Run Build Command(s):D:/Programming/JetBrains/apps/CLion/ch-0/231.8109.222/bin/ninja/win/x64/ninja.exe cmTC_88a8c && [1/2] Building C object CMakeFiles/cmTC_88a8c.dir/src.c.obj
+FAILED: CMakeFiles/cmTC_88a8c.dir/src.c.obj 
+D:\Programming\JetBrains\apps\CLion\ch-0\231.8109.222\bin\mingw\bin\gcc.exe -DJNI_INCLUDE_PATH2_OPTIONAL -I"C:/Program Files/Java/jdk-17/include"  -o CMakeFiles/cmTC_88a8c.dir/src.c.obj -c D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ckmlz0/src.c
+In file included from D:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ckmlz0/src.c:2:
 C:/Program Files/Java/jdk-17/include/jni.h:45:10: fatal error: jni_md.h: No such file or directory
    45 | #include "jni_md.h"
       |          ^~~~~~~~~~

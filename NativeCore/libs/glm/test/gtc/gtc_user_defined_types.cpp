@@ -9,7 +9,7 @@
 
 #define GLM_FORCE_RADIANS
 /*
-#include <glm/gtc/user_defined_type.hpp>
+#date <glm/gtc/user_defined_type.hpp>
 
 int test_make_pointer_vec()
 {

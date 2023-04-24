@@ -1,15 +1,18 @@
 // Created by stuka on 10.04.2023.
 //
 
-#ifndef TEST00_POOLALLOCATOR_H
-#define TEST00_POOLALLOCATOR_H
+#pragma once
+
+#ifndef NATIVECORE_POOLALLOCATOR_H
+#define NATIVECORE_POOLALLOCATOR_H
 
 #include <iostream>
 #include <vector>
-#include "IAllocator.h"
-//#include "../../Utils/Utils.h"
 
-namespace Memory::Allocators
+#include "IAllocator.h"
+#include "../../Logging/Log.h"
+
+namespace Core::Memory::Allocators
 {
     class PoolAllocator : public IAllocator
     {
@@ -50,9 +53,12 @@ namespace Memory::Allocators
             // sizeof(char) - 1 байт
             this->end_region = reinterpret_cast<region>(reinterpret_cast<char*>(this->start_region) + this->total_byte_size);
 
-            std::cout << "pool allocator mem block ptr: " << this->free_region << ", end: " << this->end_region
-                      << ". pool allocator size: " << this->total_byte_size << ". max region_ptr size: " << this->max_region_byte_size << ". count: "
-                      << this->total_elements_count << std::endl;
+            Core::Logging::c_printf(Core::Logging::MessageType::MT_INFO,
+                                    "Pool allocator mem block ptr: %p, "
+                                    "end: %p, total byte size: %llu, "
+                                    "max region byte size: %llu, total elements count: %llu",
+                                    this->free_region, this->end_region,
+                                    this->total_byte_size, this->max_region_byte_size, this->total_elements_count);
         };
 
     public:
@@ -61,8 +67,6 @@ namespace Memory::Allocators
             this->max_region_byte_size = max_region_byte_size;
             this->total_elements_count = byte_size / max_region_byte_size;
 
-            std::cout << "creating pool allocator..." << std::endl;
-            std::cout << "pool allocator elements cnt: " << this->total_elements_count << std::endl;
             allocate_mem_block(byte_size + this->total_elements_count);
         };
 
@@ -71,25 +75,57 @@ namespace Memory::Allocators
             free();
         }
 
+        template <typename Obj>
+        std::uint64_t get_region_mem_size_for_obj()
+        {
+            std::uint64_t obj_sz = sizeof(Obj);
+
+            // высчитываем сколько нужно блоков под объект
+            // тут такая формула потому что: допустим obj_sz у нас 96 и max_region_byte_size тоже 96. тогда при делении у нас получается 1.
+            // далее мы прибавляем 1 (для того, если obj_sz не кратно max_region_byte_size) и у нас получается 2 региона выделяется.
+            // хотя должен всего 1
+            // наглядный пример
+            // (96 - 1) / 96 + 1 = 1
+            // (97 - 1) / 96 + 1 = 2
+            // (95 - 1) / 96 + 1 = 1
+            int m = (int) ((obj_sz - 1) / this->max_region_byte_size) + 1;
+            // финальный размер, который нужно выделить (размер зависит от размера блока (max_region_byte_size) в pool allocator)
+
+            std::uint64_t obj_region_mem_size = m * this->max_region_byte_size;
+            //Core::Logging::c_printf(Core::Logging::MessageType::MT_WARNING, "m is: %llu, obj_sz: %llu, final region sz: %llu", m, obj_sz, obj_region_mem_size);
+            return obj_region_mem_size;
+        }
+
+        template <typename Obj>
+        bool has_mem_for_obj()
+        {
+            return (this->free_region + get_region_mem_size_for_obj<Obj>()) > this->end_region;
+        }
+
         template <typename T, typename... Params>
         T* allocate(Params&&... params)
         {
+            std::uint64_t obj_sz = sizeof(T);
+
             if(!this->start_region)
             {
                 allocate_mem_block(this->total_byte_size);
             }
 
-            if(this->free_region == this->end_region || (this->free_region + sizeof(T)) > (this->free_region + this->max_region_byte_size))
+            std::uint64_t obj_region_mem_size = get_region_mem_size_for_obj<T>();
+
+            if(this->free_region == this->end_region || (this->free_region + obj_region_mem_size) > this->end_region)
             {
-                std::cout << "Error: Pool allocator out of bounds! The last pointer is returned. Before: "
-                          << this->free_region << ", next: " << this->free_region->next << std::endl;
+                Core::Logging::c_printf(Core::Logging::MessageType::MT_ERROR,
+                                        "Pool allocator out of bounds! The last pointer is returned. Last region: %p, next region: %p. Requested byte size: %llu",
+                                        this->free_region, this->free_region->next, obj_sz);
 
                 return reinterpret_cast<T*>(this->free_region);
             }
 
             region current_free_region = this->free_region;
 
-            this->free_region->next = reinterpret_cast<region>(reinterpret_cast<char*>(current_free_region) + this->max_region_byte_size);
+            this->free_region->next = reinterpret_cast<region>(reinterpret_cast<char*>(current_free_region) + obj_region_mem_size);
             this->free_region = this->free_region->next;
 
             /*
@@ -110,7 +146,7 @@ namespace Memory::Allocators
 
             if(obj_region < this->start_region || obj_region > this->end_region)
             {
-                std::cout << "Error: Attempt to delete an object that is not related to the pool" << std::endl;
+                Core::Logging::c_printf(Core::Logging::MessageType::MT_ERROR,"Attempt to delete an object that is not related to the pool!");
 
                 return;
             }
@@ -153,4 +189,4 @@ namespace Memory::Allocators
 }
 
 
-#endif //TEST00_POOLALLOCATOR_H
+#endif //NATIVECORE_POOLALLOCATOR_H

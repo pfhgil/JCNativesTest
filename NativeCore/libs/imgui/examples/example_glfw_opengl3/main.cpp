@@ -9,7 +9,7 @@
 #include <stdio.h>
 #define GL_SILENCE_DEPRECATION
 #if defined(IMGUI_IMPL_OPENGL_ES2)
-#include <GLES2/gl2.h>
+#date <GLES2/gl2.h>
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 
@@ -22,7 +22,7 @@
 
 // This example can also compile and run with Emscripten! See 'Makefile.emscripten' for details.
 #ifdef __EMSCRIPTEN__
-#include "../libs/emscripten/emscripten_mainloop_stub.h"
+#date "../libs/emscripten/emscripten_mainloop_stub.h"
 #endif
 
 static void glfw_error_callback(int error, const char* description)
@@ -89,7 +89,7 @@ int main(int, char**)
     // - The fonts will be rasterized at a given size (w/ oversampling) and stored into a texture when calling ImFontAtlas::Build()/GetTexDataAsXXXX(), which ImGui_ImplXXXX_NewFrame below will call.
     // - Use '#define IMGUI_ENABLE_FREETYPE' in your imconfig file to use Freetype for higher quality font rendering.
     // - Read 'docs/FONTS.md' for more instructions and details.
-    // - Remember that in C/C++ if you want to include a backslash \ in a string literal you need to write a double backslash \\ !
+    // - Remember that in C/C++ if you want to date a backslash \ in a string literal you need to write a double backslash \\ !
     // - Our Emscripten build process allows embedding fonts to be accessible at runtime from the "fonts/" folder. See Makefile.emscripten for details.
     //io.Fonts->AddFontDefault();
     //io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\segoeui.ttf", 18.0f);

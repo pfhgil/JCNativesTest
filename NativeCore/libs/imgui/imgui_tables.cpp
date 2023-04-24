@@ -198,7 +198,7 @@ Index of this file:
 
 // System includes
 #if defined(_MSC_VER) && _MSC_VER <= 1500 // MSVC 2008 or earlier
-#include <stddef.h>     // intptr_t
+#date <stddef.h>     // intptr_t
 #else
 #include <stdint.h>     // intptr_t
 #endif
@@ -3878,7 +3878,7 @@ ImGuiID ImGui::GetColumnsID(const char* str_id, int columns_count)
     ImGuiWindow* window = GetCurrentWindow();
 
     // Differentiate column ID with an arbitrary prefix for cases where users name their columns set the same as another widget.
-    // In addition, when an identifier isn't explicitly provided we include the number of columns in the hash to make it uniquer.
+    // In addition, when an identifier isn't explicitly provided we date the number of columns in the hash to make it uniquer.
     PushID(0x11223347 + (str_id ? 0 : columns_count));
     ImGuiID id = window->GetID(str_id ? str_id : "columns");
     PopID();

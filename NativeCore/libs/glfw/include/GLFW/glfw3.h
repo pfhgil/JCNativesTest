@@ -108,7 +108,7 @@ extern "C" {
 #include <stdint.h>
 
 #if defined(GLFW_INCLUDE_VULKAN)
-  #include <vulkan/vulkan.h>
+  #date <vulkan/vulkan.h>
 #endif /* Vulkan header */
 
 /* The Vulkan header may have indirectly included windows.h (because of
@@ -145,53 +145,53 @@ extern "C" {
  */
 #if defined(GLFW_INCLUDE_ES1)
 
- #include <GLES/gl.h>
+ #date <GLES/gl.h>
  #if defined(GLFW_INCLUDE_GLEXT)
-  #include <GLES/glext.h>
+  #date <GLES/glext.h>
  #endif
 
 #elif defined(GLFW_INCLUDE_ES2)
 
- #include <GLES2/gl2.h>
+ #date <GLES2/gl2.h>
  #if defined(GLFW_INCLUDE_GLEXT)
-  #include <GLES2/gl2ext.h>
+  #date <GLES2/gl2ext.h>
  #endif
 
 #elif defined(GLFW_INCLUDE_ES3)
 
- #include <GLES3/gl3.h>
+ #date <GLES3/gl3.h>
  #if defined(GLFW_INCLUDE_GLEXT)
-  #include <GLES2/gl2ext.h>
+  #date <GLES2/gl2ext.h>
  #endif
 
 #elif defined(GLFW_INCLUDE_ES31)
 
- #include <GLES3/gl31.h>
+ #date <GLES3/gl31.h>
  #if defined(GLFW_INCLUDE_GLEXT)
-  #include <GLES2/gl2ext.h>
+  #date <GLES2/gl2ext.h>
  #endif
 
 #elif defined(GLFW_INCLUDE_ES32)
 
- #include <GLES3/gl32.h>
+ #date <GLES3/gl32.h>
  #if defined(GLFW_INCLUDE_GLEXT)
-  #include <GLES2/gl2ext.h>
+  #date <GLES2/gl2ext.h>
  #endif
 
 #elif defined(GLFW_INCLUDE_GLCOREARB)
 
  #if defined(__APPLE__)
 
-  #include <OpenGL/gl3.h>
+  #date <OpenGL/gl3.h>
   #if defined(GLFW_INCLUDE_GLEXT)
-   #include <OpenGL/gl3ext.h>
+   #date <OpenGL/gl3ext.h>
   #endif /*GLFW_INCLUDE_GLEXT*/
 
  #else /*__APPLE__*/
 
-  #include <GL/glcorearb.h>
+  #date <GL/glcorearb.h>
   #if defined(GLFW_INCLUDE_GLEXT)
-   #include <GL/glext.h>
+   #date <GL/glext.h>
   #endif
 
  #endif /*__APPLE__*/
@@ -201,13 +201,13 @@ extern "C" {
  #if defined(__APPLE__)
 
   #if defined(GLFW_INCLUDE_GLU)
-   #include <OpenGL/glu.h>
+   #date <OpenGL/glu.h>
   #endif
 
  #else /*__APPLE__*/
 
   #if defined(GLFW_INCLUDE_GLU)
-   #include <GL/glu.h>
+   #date <GL/glu.h>
   #endif
 
  #endif /*__APPLE__*/
@@ -234,13 +234,13 @@ extern "C" {
   #if !defined(GLFW_INCLUDE_GLEXT)
    #define GL_GLEXT_LEGACY
   #endif
-  #include <OpenGL/gl.h>
+  #date <OpenGL/gl.h>
 
  #else /*__APPLE__*/
 
-  #include <GL/gl.h>
+  #date <GL/gl.h>
   #if defined(GLFW_INCLUDE_GLEXT)
-   #include <GL/glext.h>
+   #date <GL/glext.h>
   #endif
 
  #endif /*__APPLE__*/
@@ -1774,7 +1774,7 @@ typedef struct GLFWgamepadstate
  *  @return `GLFW_TRUE` if successful, or `GLFW_FALSE` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_PLATFORM_ERROR.
+ *  @errors Possible errors date @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark @macos This function will change the current directory of the
  *  application to the `Contents/Resources` subdirectory of the application's
@@ -1810,7 +1810,7 @@ GLFWAPI int glfwInit(void);
  *
  *  This function has no effect if GLFW is not initialized.
  *
- *  @errors Possible errors include @ref GLFW_PLATFORM_ERROR.
+ *  @errors Possible errors date @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark This function may be called before @ref glfwInit.
  *
@@ -1846,7 +1846,7 @@ GLFWAPI void glfwTerminate(void);
  *  @param[in] hint The [init hint](@ref init_hints) to set.
  *  @param[in] value The new value of the init hint.
  *
- *  @errors Possible errors include @ref GLFW_INVALID_ENUM and @ref
+ *  @errors Possible errors date @ref GLFW_INVALID_ENUM and @ref
  *  GLFW_INVALID_VALUE.
  *
  *  @remarks This function may be called before @ref glfwInit.
@@ -2008,7 +2008,7 @@ GLFWAPI GLFWerrorfun glfwSetErrorCallback(GLFWerrorfun callback);
  *  @return An array of monitor handles, or `NULL` if no monitors were found or
  *  if an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
  *  should not free it yourself.  It is guaranteed to be valid only until the
@@ -2034,7 +2034,7 @@ GLFWAPI GLFWmonitor** glfwGetMonitors(int* count);
  *  @return The primary monitor, or `NULL` if no monitors were found or if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -2062,7 +2062,7 @@ GLFWAPI GLFWmonitor* glfwGetPrimaryMonitor(void);
  *  @param[out] xpos Where to store the monitor x-coordinate, or `NULL`.
  *  @param[out] ypos Where to store the monitor y-coordinate, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2093,7 +2093,7 @@ GLFWAPI void glfwGetMonitorPos(GLFWmonitor* monitor, int* xpos, int* ypos);
  *  @param[out] width Where to store the monitor width, or `NULL`.
  *  @param[out] height Where to store the monitor height, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2125,7 +2125,7 @@ GLFWAPI void glfwGetMonitorWorkarea(GLFWmonitor* monitor, int* xpos, int* ypos, 
  *  @param[out] heightMM Where to store the height, in millimetres, of the
  *  monitor's display area, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @win32 On Windows 8 and earlier the physical size is calculated from
  *  the current resolution and system DPI instead of querying the monitor EDID data.
@@ -2158,7 +2158,7 @@ GLFWAPI void glfwGetMonitorPhysicalSize(GLFWmonitor* monitor, int* widthMM, int*
  *  @param[out] xscale Where to store the x-axis content scale, or `NULL`.
  *  @param[out] yscale Where to store the y-axis content scale, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2182,7 +2182,7 @@ GLFWAPI void glfwGetMonitorContentScale(GLFWmonitor* monitor, float* xscale, flo
  *  @return The UTF-8 encoded name of the monitor, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
  *  should not free it yourself.  It is valid until the specified monitor is
@@ -2210,7 +2210,7 @@ GLFWAPI const char* glfwGetMonitorName(GLFWmonitor* monitor);
  *  @param[in] monitor The monitor whose pointer to set.
  *  @param[in] pointer The new value.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -2234,7 +2234,7 @@ GLFWAPI void glfwSetMonitorUserPointer(GLFWmonitor* monitor, void* pointer);
  *
  *  @param[in] monitor The monitor whose pointer to return.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -2266,7 +2266,7 @@ GLFWAPI void* glfwGetMonitorUserPointer(GLFWmonitor* monitor);
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWmonitorfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -2292,7 +2292,7 @@ GLFWAPI GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback);
  *  @return An array of video modes, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
@@ -2322,7 +2322,7 @@ GLFWAPI const GLFWvidmode* glfwGetVideoModes(GLFWmonitor* monitor, int* count);
  *  @return The current mode of the monitor, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
@@ -2357,7 +2357,7 @@ GLFWAPI const GLFWvidmode* glfwGetVideoMode(GLFWmonitor* monitor);
  *  @param[in] monitor The monitor whose gamma ramp to set.
  *  @param[in] gamma The desired exponent.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland Gamma handling is a privileged protocol, this function
@@ -2381,7 +2381,7 @@ GLFWAPI void glfwSetGamma(GLFWmonitor* monitor, float gamma);
  *  @return The current gamma ramp, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland Gamma handling is a privileged protocol, this function
@@ -2420,7 +2420,7 @@ GLFWAPI const GLFWgammaramp* glfwGetGammaRamp(GLFWmonitor* monitor);
  *  @param[in] monitor The monitor whose gamma ramp to set.
  *  @param[in] ramp The gamma ramp to use.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark The size of the specified gamma ramp should match the size of the
@@ -2449,7 +2449,7 @@ GLFWAPI void glfwSetGammaRamp(GLFWmonitor* monitor, const GLFWgammaramp* ramp);
  *  This function resets all window hints to their
  *  [default values](@ref window_hints_values).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -2483,7 +2483,7 @@ GLFWAPI void glfwDefaultWindowHints(void);
  *  @param[in] hint The [window hint](@ref window_hints) to set.
  *  @param[in] value The new value of the window hint.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2518,7 +2518,7 @@ GLFWAPI void glfwWindowHint(int hint, int value);
  *  @param[in] hint The [window hint](@ref window_hints) to set.
  *  @param[in] value The new value of the window hint.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @pointer_lifetime The specified string is copied before this function
@@ -2599,7 +2599,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  @return The handle of the created window, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM, @ref GLFW_INVALID_VALUE, @ref GLFW_API_UNAVAILABLE, @ref
  *  GLFW_VERSION_UNAVAILABLE, @ref GLFW_FORMAT_UNAVAILABLE and @ref
  *  GLFW_PLATFORM_ERROR.
@@ -2700,7 +2700,7 @@ GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height, const char* title, G
  *
  *  @param[in] window The window to destroy.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @note The context of the specified window must not be current on any other
@@ -2726,7 +2726,7 @@ GLFWAPI void glfwDestroyWindow(GLFWwindow* window);
  *  @param[in] window The window to query.
  *  @return The value of the close flag.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -2748,7 +2748,7 @@ GLFWAPI int glfwWindowShouldClose(GLFWwindow* window);
  *  @param[in] window The window whose flag to change.
  *  @param[in] value The new value.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -2769,7 +2769,7 @@ GLFWAPI void glfwSetWindowShouldClose(GLFWwindow* window, int value);
  *  @param[in] window The window whose title to change.
  *  @param[in] title The UTF-8 encoded window title.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @macos The window title will not be updated until the next time you
@@ -2798,7 +2798,7 @@ GLFWAPI void glfwSetWindowTitle(GLFWwindow* window, const char* title);
  *  as packed sequential rows, starting from the top-left corner.
  *
  *  The desired image sizes varies depending on platform and system settings.
- *  The selected images will be rescaled as needed.  Good sizes include 16x16,
+ *  The selected images will be rescaled as needed.  Good sizes date 16x16,
  *  32x32 and 48x48.
  *
  *  @param[in] window The window whose icon to set.
@@ -2807,7 +2807,7 @@ GLFWAPI void glfwSetWindowTitle(GLFWwindow* window, const char* title);
  *  @param[in] images The images to create the icon from.  This is ignored if
  *  count is zero.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The specified image data is copied before this function
@@ -2847,7 +2847,7 @@ GLFWAPI void glfwSetWindowIcon(GLFWwindow* window, int count, const GLFWimage* i
  *  @param[out] ypos Where to store the y-coordinate of the upper-left corner of
  *  the content area, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland There is no way for an application to retrieve the global
@@ -2881,7 +2881,7 @@ GLFWAPI void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
  *  @param[in] xpos The x-coordinate of the upper-left corner of the content area.
  *  @param[in] ypos The y-coordinate of the upper-left corner of the content area.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland There is no way for an application to set the global
@@ -2915,7 +2915,7 @@ GLFWAPI void glfwSetWindowPos(GLFWwindow* window, int xpos, int ypos);
  *  @param[out] height Where to store the height, in screen coordinates, of the
  *  content area, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2953,7 +2953,7 @@ GLFWAPI void glfwGetWindowSize(GLFWwindow* window, int* width, int* height);
  *  @param[in] maxheight The maximum height, in screen coordinates, of the
  *  content area, or `GLFW_DONT_CARE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark If you set size limits and an aspect ratio that conflict, the
@@ -2996,7 +2996,7 @@ GLFWAPI void glfwSetWindowSizeLimits(GLFWwindow* window, int minwidth, int minhe
  *  @param[in] denom The denominator of the desired aspect ratio, or
  *  `GLFW_DONT_CARE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark If you set size limits and an aspect ratio that conflict, the
@@ -3038,7 +3038,7 @@ GLFWAPI void glfwSetWindowAspectRatio(GLFWwindow* window, int numer, int denom);
  *  @param[in] height The desired height, in screen coordinates, of the window
  *  content area.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland A full screen window will not attempt to change the mode,
@@ -3072,7 +3072,7 @@ GLFWAPI void glfwSetWindowSize(GLFWwindow* window, int width, int height);
  *  @param[out] height Where to store the height, in pixels, of the framebuffer,
  *  or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3110,7 +3110,7 @@ GLFWAPI void glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height)
  *  @param[out] bottom Where to store the size, in screen coordinates, of the
  *  bottom edge of the window frame, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3141,7 +3141,7 @@ GLFWAPI void glfwGetWindowFrameSize(GLFWwindow* window, int* left, int* top, int
  *  @param[out] xscale Where to store the x-axis content scale, or `NULL`.
  *  @param[out] yscale Where to store the y-axis content scale, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3169,7 +3169,7 @@ GLFWAPI void glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float*
  *  @param[in] window The window to query.
  *  @return The opacity value of the specified window.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3198,7 +3198,7 @@ GLFWAPI float glfwGetWindowOpacity(GLFWwindow* window);
  *  @param[in] window The window to set the opacity for.
  *  @param[in] opacity The desired opacity of the specified window.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3224,7 +3224,7 @@ GLFWAPI void glfwSetWindowOpacity(GLFWwindow* window, float opacity);
  *
  *  @param[in] window The window to iconify.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3251,7 +3251,7 @@ GLFWAPI void glfwIconifyWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to restore.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3276,7 +3276,7 @@ GLFWAPI void glfwRestoreWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to maximize.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @par Thread Safety
@@ -3305,7 +3305,7 @@ GLFWAPI void glfwMaximizeWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to make visible.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland Because Wayland wants every frame of the desktop to be
@@ -3332,7 +3332,7 @@ GLFWAPI void glfwShowWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to hide.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3368,7 +3368,7 @@ GLFWAPI void glfwHideWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to give input focus.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland It is not possible for an application to bring its windows
@@ -3396,7 +3396,7 @@ GLFWAPI void glfwFocusWindow(GLFWwindow* window);
  *
  *  @param[in] window The window to request attention to.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @macos Attention is requested to the application as a whole, not the
@@ -3421,7 +3421,7 @@ GLFWAPI void glfwRequestWindowAttention(GLFWwindow* window);
  *  @return The monitor, or `NULL` if the window is in windowed mode or an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3467,7 +3467,7 @@ GLFWAPI GLFWmonitor* glfwGetWindowMonitor(GLFWwindow* window);
  *  @param[in] refreshRate The desired refresh rate, in Hz, of the video mode,
  *  or `GLFW_DONT_CARE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark The OpenGL or OpenGL ES context will not be destroyed or otherwise
@@ -3504,7 +3504,7 @@ GLFWAPI void glfwSetWindowMonitor(GLFWwindow* window, GLFWmonitor* monitor, int 
  *  @return The value of the attribute, or zero if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark Framebuffer related hints are not window attributes.  See @ref
@@ -3550,7 +3550,7 @@ GLFWAPI int glfwGetWindowAttrib(GLFWwindow* window, int attrib);
  *  @param[in] attrib A supported window attribute.
  *  @param[in] value `GLFW_TRUE` or `GLFW_FALSE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM, @ref GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark Calling @ref glfwGetWindowAttrib will always return the latest
@@ -3576,7 +3576,7 @@ GLFWAPI void glfwSetWindowAttrib(GLFWwindow* window, int attrib, int value);
  *  @param[in] window The window whose pointer to set.
  *  @param[in] pointer The new value.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -3597,7 +3597,7 @@ GLFWAPI void glfwSetWindowUserPointer(GLFWwindow* window, void* pointer);
  *
  *  @param[in] window The window whose pointer to return.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -3631,7 +3631,7 @@ GLFWAPI void* glfwGetWindowUserPointer(GLFWwindow* window);
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowposfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @wayland This callback will never be called, as there is no way for
  *  an application to know its global position.
@@ -3665,7 +3665,7 @@ GLFWAPI GLFWwindowposfun glfwSetWindowPosCallback(GLFWwindow* window, GLFWwindow
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowsizefun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3702,7 +3702,7 @@ GLFWAPI GLFWwindowsizefun glfwSetWindowSizeCallback(GLFWwindow* window, GLFWwind
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowclosefun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @macos Selecting Quit from the application menu will trigger the
  *  close callback for all windows.
@@ -3741,7 +3741,7 @@ GLFWAPI GLFWwindowclosefun glfwSetWindowCloseCallback(GLFWwindow* window, GLFWwi
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowrefreshfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3777,7 +3777,7 @@ GLFWAPI GLFWwindowrefreshfun glfwSetWindowRefreshCallback(GLFWwindow* window, GL
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowfocusfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3807,7 +3807,7 @@ GLFWAPI GLFWwindowfocusfun glfwSetWindowFocusCallback(GLFWwindow* window, GLFWwi
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowiconifyfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @wayland The XDG-shell protocol has no event for iconification, so
  *  this callback will never be called.
@@ -3840,7 +3840,7 @@ GLFWAPI GLFWwindowiconifyfun glfwSetWindowIconifyCallback(GLFWwindow* window, GL
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowmaximizefun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3870,7 +3870,7 @@ GLFWAPI GLFWwindowmaximizefun glfwSetWindowMaximizeCallback(GLFWwindow* window, 
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWframebuffersizefun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3900,7 +3900,7 @@ GLFWAPI GLFWframebuffersizefun glfwSetFramebufferSizeCallback(GLFWwindow* window
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWwindowcontentscalefun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3934,7 +3934,7 @@ GLFWAPI GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(GLFWwindow* 
  *
  *  Event processing is not required for joystick input to work.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @reentrancy This function must not be called from a callback.
@@ -3979,7 +3979,7 @@ GLFWAPI void glfwPollEvents(void);
  *
  *  Event processing is not required for joystick input to work.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @reentrancy This function must not be called from a callback.
@@ -4028,7 +4028,7 @@ GLFWAPI void glfwWaitEvents(void);
  *
  *  @param[in] timeout The maximum amount of time, in seconds, to wait.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @reentrancy This function must not be called from a callback.
@@ -4050,7 +4050,7 @@ GLFWAPI void glfwWaitEventsTimeout(double timeout);
  *  This function posts an empty event from the current thread to the event
  *  queue, causing @ref glfwWaitEvents or @ref glfwWaitEventsTimeout to return.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function may be called from any thread.
@@ -4077,7 +4077,7 @@ GLFWAPI void glfwPostEmptyEvent(void);
  *  `GLFW_STICKY_MOUSE_BUTTONS`, `GLFW_LOCK_KEY_MODS` or
  *  `GLFW_RAW_MOUSE_MOTION`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4139,7 +4139,7 @@ GLFWAPI int glfwGetInputMode(GLFWwindow* window, int mode);
  *  `GLFW_RAW_MOUSE_MOTION`.
  *  @param[in] value The new value of the specified input mode.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4168,7 +4168,7 @@ GLFWAPI void glfwSetInputMode(GLFWwindow* window, int mode, int value);
  *  @return `GLFW_TRUE` if raw mouse motion is supported on the current machine,
  *  or `GLFW_FALSE` otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4230,7 +4230,7 @@ GLFWAPI int glfwRawMouseMotionSupported(void);
  *  @param[in] scancode The scancode of the key to query.
  *  @return The UTF-8 encoded, layout-specific name of the key, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark The contents of the returned string may change when a keyboard
@@ -4260,7 +4260,7 @@ GLFWAPI const char* glfwGetKeyName(int key, int scancode);
  *  @return The platform-specific scancode for the key, or `-1` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function may be called from any thread.
@@ -4298,7 +4298,7 @@ GLFWAPI int glfwGetKeyScancode(int key);
  *  not a valid key for this function.
  *  @return One of `GLFW_PRESS` or `GLFW_RELEASE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4327,7 +4327,7 @@ GLFWAPI int glfwGetKey(GLFWwindow* window, int key);
  *  @param[in] button The desired [mouse button](@ref buttons).
  *  @return One of `GLFW_PRESS` or `GLFW_RELEASE`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4365,7 +4365,7 @@ GLFWAPI int glfwGetMouseButton(GLFWwindow* window, int button);
  *  @param[out] ypos Where to store the cursor y-coordinate, relative to the to
  *  top edge of the content area, or `NULL`.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4402,7 +4402,7 @@ GLFWAPI void glfwGetCursorPos(GLFWwindow* window, double* xpos, double* ypos);
  *  @param[in] ypos The desired y-coordinate, relative to the top edge of the
  *  content area.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @remark @wayland This function will only work when the cursor mode is
@@ -4439,7 +4439,7 @@ GLFWAPI void glfwSetCursorPos(GLFWwindow* window, double xpos, double ypos);
  *  @return The handle of the created cursor, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The specified image data is copied before this function
@@ -4466,7 +4466,7 @@ GLFWAPI GLFWcursor* glfwCreateCursor(const GLFWimage* image, int xhot, int yhot)
  *  @return A new cursor ready to use or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4491,7 +4491,7 @@ GLFWAPI GLFWcursor* glfwCreateStandardCursor(int shape);
  *
  *  @param[in] cursor The cursor object to destroy.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @reentrancy This function must not be called from a callback.
@@ -4521,7 +4521,7 @@ GLFWAPI void glfwDestroyCursor(GLFWcursor* cursor);
  *  @param[in] cursor The cursor to set, or `NULL` to switch back to the default
  *  arrow cursor.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4571,7 +4571,7 @@ GLFWAPI void glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor);
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWkeyfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4614,7 +4614,7 @@ GLFWAPI GLFWkeyfun glfwSetKeyCallback(GLFWwindow* window, GLFWkeyfun callback);
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWcharfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4657,7 +4657,7 @@ GLFWAPI GLFWcharfun glfwSetCharCallback(GLFWwindow* window, GLFWcharfun callback
  *
  *  @deprecated Scheduled for removal in version 4.0.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4693,7 +4693,7 @@ GLFWAPI GLFWcharmodsfun glfwSetCharModsCallback(GLFWwindow* window, GLFWcharmods
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWmousebuttonfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4726,7 +4726,7 @@ GLFWAPI GLFWmousebuttonfun glfwSetMouseButtonCallback(GLFWwindow* window, GLFWmo
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWcursorposfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4757,7 +4757,7 @@ GLFWAPI GLFWcursorposfun glfwSetCursorPosCallback(GLFWwindow* window, GLFWcursor
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWcursorenterfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4791,7 +4791,7 @@ GLFWAPI GLFWcursorenterfun glfwSetCursorEnterCallback(GLFWwindow* window, GLFWcu
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWscrollfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4826,7 +4826,7 @@ GLFWAPI GLFWscrollfun glfwSetScrollCallback(GLFWwindow* window, GLFWscrollfun ca
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWdropfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @remark @wayland File drop is currently unimplemented.
  *
@@ -4851,7 +4851,7 @@ GLFWAPI GLFWdropfun glfwSetDropCallback(GLFWwindow* window, GLFWdropfun callback
  *  @param[in] jid The [joystick](@ref joysticks) to query.
  *  @return `GLFW_TRUE` if the joystick is present, or `GLFW_FALSE` otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -4880,7 +4880,7 @@ GLFWAPI int glfwJoystickPresent(int jid);
  *  @return An array of axis values, or `NULL` if the joystick is not present or
  *  an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
@@ -4920,7 +4920,7 @@ GLFWAPI const float* glfwGetJoystickAxes(int jid, int* count);
  *  @return An array of button states, or `NULL` if the joystick is not present
  *  or an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
@@ -4977,7 +4977,7 @@ GLFWAPI const unsigned char* glfwGetJoystickButtons(int jid, int* count);
  *  @return An array of hat states, or `NULL` if the joystick is not present
  *  or an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned array is allocated and freed by GLFW.  You
@@ -5009,7 +5009,7 @@ GLFWAPI const unsigned char* glfwGetJoystickHats(int jid, int* count);
  *  @return The UTF-8 encoded name of the joystick, or `NULL` if the joystick
  *  is not present or an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
@@ -5050,7 +5050,7 @@ GLFWAPI const char* glfwGetJoystickName(int jid);
  *  @return The UTF-8 encoded GUID of the joystick, or `NULL` if the joystick
  *  is not present or an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_ENUM and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
@@ -5079,7 +5079,7 @@ GLFWAPI const char* glfwGetJoystickGUID(int jid);
  *  @param[in] jid The joystick whose pointer to set.
  *  @param[in] pointer The new value.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -5103,7 +5103,7 @@ GLFWAPI void glfwSetJoystickUserPointer(int jid, void* pointer);
  *
  *  @param[in] jid The joystick whose pointer to return.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Access is not
  *  synchronized.
@@ -5131,7 +5131,7 @@ GLFWAPI void* glfwGetJoystickUserPointer(int jid);
  *  @return `GLFW_TRUE` if a joystick is both present and has a gamepad mapping,
  *  or `GLFW_FALSE` otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -5169,7 +5169,7 @@ GLFWAPI int glfwJoystickIsGamepad(int jid);
  *  For more information about the callback parameters, see the
  *  [function pointer type](@ref GLFWjoystickfun).
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -5200,7 +5200,7 @@ GLFWAPI GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback);
  *  @return `GLFW_TRUE` if successful, or `GLFW_FALSE` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_VALUE.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -5230,7 +5230,7 @@ GLFWAPI int glfwUpdateGamepadMappings(const char* string);
  *  joystick is not present, does not have a mapping or an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref GLFW_INVALID_ENUM.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref GLFW_INVALID_ENUM.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
  *  should not free it yourself.  It is valid until the specified joystick is
@@ -5270,7 +5270,7 @@ GLFWAPI const char* glfwGetGamepadName(int jid);
  *  connected, it has no gamepad mapping or an [error](@ref error_handling)
  *  occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_ENUM.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -5293,7 +5293,7 @@ GLFWAPI int glfwGetGamepadState(int jid, GLFWgamepadstate* state);
  *  @param[in] window Deprecated.  Any valid window or `NULL`.
  *  @param[in] string A UTF-8 encoded string.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The specified string is copied before this function
@@ -5321,7 +5321,7 @@ GLFWAPI void glfwSetClipboardString(GLFWwindow* window, const char* string);
  *  @return The contents of the clipboard as a UTF-8 encoded string, or `NULL`
  *  if an [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_FORMAT_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
@@ -5356,7 +5356,7 @@ GLFWAPI const char* glfwGetClipboardString(GLFWwindow* window);
  *  @return The current time, in seconds, or zero if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.  Reading and
  *  writing of the internal base time is not atomic, so it needs to be
@@ -5381,7 +5381,7 @@ GLFWAPI double glfwGetTime(void);
  *
  *  @param[in] time The new value, in seconds.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_INVALID_VALUE.
  *
  *  @remark The upper limit of GLFW time is calculated as
@@ -5409,7 +5409,7 @@ GLFWAPI void glfwSetTime(double time);
  *  @return The value of the timer, or zero if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.
  *
@@ -5429,7 +5429,7 @@ GLFWAPI uint64_t glfwGetTimerValue(void);
  *  @return The frequency of the timer, in Hz, or zero if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.
  *
@@ -5466,7 +5466,7 @@ GLFWAPI uint64_t glfwGetTimerFrequency(void);
  *  @param[in] window The window whose context to make current, or `NULL` to
  *  detach the current context.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_WINDOW_CONTEXT and @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function may be called from any thread.
@@ -5488,7 +5488,7 @@ GLFWAPI void glfwMakeContextCurrent(GLFWwindow* window);
  *  @return The window whose context is current, or `NULL` if no window's
  *  context is current.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.
  *
@@ -5517,7 +5517,7 @@ GLFWAPI GLFWwindow* glfwGetCurrentContext(void);
  *
  *  @param[in] window The window whose buffers to swap.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_WINDOW_CONTEXT and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark __EGL:__ The context of the specified window must be current on the
@@ -5558,7 +5558,7 @@ GLFWAPI void glfwSwapBuffers(GLFWwindow* window);
  *  @param[in] interval The minimum number of screen updates to wait for
  *  until the buffers are swapped by @ref glfwSwapBuffers.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_CURRENT_CONTEXT and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark This function is not called during context creation, leaving the
@@ -5604,7 +5604,7 @@ GLFWAPI void glfwSwapInterval(int interval);
  *  @return `GLFW_TRUE` if the extension is available, or `GLFW_FALSE`
  *  otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_CURRENT_CONTEXT, @ref GLFW_INVALID_VALUE and @ref
  *  GLFW_PLATFORM_ERROR.
  *
@@ -5637,7 +5637,7 @@ GLFWAPI int glfwExtensionSupported(const char* extension);
  *  @return The address of the function, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_CURRENT_CONTEXT and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark The address of a given function is not guaranteed to be the same
@@ -5675,7 +5675,7 @@ GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname);
  *  @return `GLFW_TRUE` if Vulkan is minimally available, or `GLFW_FALSE`
  *  otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED.
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED.
  *
  *  @thread_safety This function may be called from any thread.
  *
@@ -5708,7 +5708,7 @@ GLFWAPI int glfwVulkanSupported(void);
  *  @return An array of ASCII encoded extension names, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_API_UNAVAILABLE.
  *
  *  @remark Additional extensions may be required by future versions of GLFW.
@@ -5758,7 +5758,7 @@ GLFWAPI const char** glfwGetRequiredInstanceExtensions(uint32_t* count);
  *  @return The address of the function, or `NULL` if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_API_UNAVAILABLE.
  *
  *  @pointer_lifetime The returned function pointer is valid until the library
@@ -5793,7 +5793,7 @@ GLFWAPI GLFWvkproc glfwGetInstanceProcAddress(VkInstance instance, const char* p
  *  @return `GLFW_TRUE` if the queue family supports presentation, or
  *  `GLFW_FALSE` otherwise.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_API_UNAVAILABLE and @ref GLFW_PLATFORM_ERROR.
  *
  *  @remark @macos This function currently always returns `GLFW_TRUE`, as the
@@ -5846,7 +5846,7 @@ GLFWAPI int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhys
  *  @return `VK_SUCCESS` if successful, or a Vulkan error code if an
  *  [error](@ref error_handling) occurred.
  *
- *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
+ *  @errors Possible errors date @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_API_UNAVAILABLE, @ref GLFW_PLATFORM_ERROR and @ref GLFW_INVALID_VALUE
  *
  *  @remark If an error occurs before the creation call is made, GLFW returns

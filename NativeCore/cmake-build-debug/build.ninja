@@ -49,6 +49,14 @@ cmake_ninja_workdir = D$:/Pixelfield/NativeSungearEngine/NativeCore/cmake-build-
 
 build cmake_object_order_depends_target_NativeCore: phony || cmake_object_order_depends_target_gl46 cmake_object_order_depends_target_glfw
 
+build CMakeFiles/NativeCore.dir/Sources/Core/Logging/Log.cpp.obj: CXX_COMPILER__NativeCore_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Logging/Log.cpp || cmake_object_order_depends_target_NativeCore
+  DEFINES = -DNativeCore_EXPORTS
+  DEP_FILE = CMakeFiles\NativeCore.dir\Sources\Core\Logging\Log.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCore.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCore.dir\Sources\Core\Logging
+
 build CMakeFiles/NativeCore.dir/Sources/Core/Main/Core.cpp.obj: CXX_COMPILER__NativeCore_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/Core.cpp || cmake_object_order_depends_target_NativeCore
   DEFINES = -DNativeCore_EXPORTS
   DEP_FILE = CMakeFiles\NativeCore.dir\Sources\Core\Main\Core.cpp.obj.d
@@ -65,6 +73,22 @@ build CMakeFiles/NativeCore.dir/Sources/Core/Main/CoreTest.cpp.obj: CXX_COMPILER
   OBJECT_DIR = CMakeFiles\NativeCore.dir
   OBJECT_FILE_DIR = CMakeFiles\NativeCore.dir\Sources\Core\Main
 
+build CMakeFiles/NativeCore.dir/Sources/Core/Memory/MemoryManager.cpp.obj: CXX_COMPILER__NativeCore_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Memory/MemoryManager.cpp || cmake_object_order_depends_target_NativeCore
+  DEFINES = -DNativeCore_EXPORTS
+  DEP_FILE = CMakeFiles\NativeCore.dir\Sources\Core\Memory\MemoryManager.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCore.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCore.dir\Sources\Core\Memory
+
+build CMakeFiles/NativeCore.dir/Sources/Core/Memory/Utils.cpp.obj: CXX_COMPILER__NativeCore_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Memory/Utils.cpp || cmake_object_order_depends_target_NativeCore
+  DEFINES = -DNativeCore_EXPORTS
+  DEP_FILE = CMakeFiles\NativeCore.dir\Sources\Core\Memory\Utils.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCore.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCore.dir\Sources\Core\Memory
+
 
 # =============================================================================
 # Link build statements for SHARED_LIBRARY target NativeCore
@@ -73,7 +97,7 @@ build CMakeFiles/NativeCore.dir/Sources/Core/Main/CoreTest.cpp.obj: CXX_COMPILER
 #############################################
 # Link the shared library libNativeCore.dll
 
-build libNativeCore.dll libNativeCore.dll.a: CXX_SHARED_LIBRARY_LINKER__NativeCore_Debug CMakeFiles/NativeCore.dir/Sources/Core/Main/Core.cpp.obj CMakeFiles/NativeCore.dir/Sources/Core/Main/CoreTest.cpp.obj | libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a || libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a
+build libNativeCore.dll libNativeCore.dll.a: CXX_SHARED_LIBRARY_LINKER__NativeCore_Debug CMakeFiles/NativeCore.dir/Sources/Core/Logging/Log.cpp.obj CMakeFiles/NativeCore.dir/Sources/Core/Main/Core.cpp.obj CMakeFiles/NativeCore.dir/Sources/Core/Main/CoreTest.cpp.obj CMakeFiles/NativeCore.dir/Sources/Core/Memory/MemoryManager.cpp.obj CMakeFiles/NativeCore.dir/Sources/Core/Memory/Utils.cpp.obj | libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a || libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a
   LANGUAGE_COMPILE_FLAGS = -g
   LINK_FLAGS = -static-libgcc -static-libstdc++ -static
   LINK_LIBRARIES = libs/glfw/src/libglfw3.a  libs/graphics/ogl/v46/libgl46.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
@@ -94,12 +118,40 @@ build libNativeCore.dll libNativeCore.dll.a: CXX_SHARED_LIBRARY_LINKER__NativeCo
 
 build cmake_object_order_depends_target_NativeCoreTest: phony || cmake_object_order_depends_target_gl46 cmake_object_order_depends_target_glfw
 
+build CMakeFiles/NativeCoreTest.dir/Sources/Core/Logging/Log.cpp.obj: CXX_COMPILER__NativeCoreTest_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Logging/Log.cpp || cmake_object_order_depends_target_NativeCoreTest
+  DEP_FILE = CMakeFiles\NativeCoreTest.dir\Sources\Core\Logging\Log.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCoreTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCoreTest.dir\Sources\Core\Logging
+
+build CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/Core.cpp.obj: CXX_COMPILER__NativeCoreTest_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/Core.cpp || cmake_object_order_depends_target_NativeCoreTest
+  DEP_FILE = CMakeFiles\NativeCoreTest.dir\Sources\Core\Main\Core.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCoreTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCoreTest.dir\Sources\Core\Main
+
 build CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/CoreTest.cpp.obj: CXX_COMPILER__NativeCoreTest_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Main/CoreTest.cpp || cmake_object_order_depends_target_NativeCoreTest
   DEP_FILE = CMakeFiles\NativeCoreTest.dir\Sources\Core\Main\CoreTest.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always -std=gnu++23
   INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
   OBJECT_DIR = CMakeFiles\NativeCoreTest.dir
   OBJECT_FILE_DIR = CMakeFiles\NativeCoreTest.dir\Sources\Core\Main
+
+build CMakeFiles/NativeCoreTest.dir/Sources/Core/Memory/MemoryManager.cpp.obj: CXX_COMPILER__NativeCoreTest_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Memory/MemoryManager.cpp || cmake_object_order_depends_target_NativeCoreTest
+  DEP_FILE = CMakeFiles\NativeCoreTest.dir\Sources\Core\Memory\MemoryManager.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCoreTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCoreTest.dir\Sources\Core\Memory
+
+build CMakeFiles/NativeCoreTest.dir/Sources/Core/Memory/Utils.cpp.obj: CXX_COMPILER__NativeCoreTest_Debug D$:/Pixelfield/NativeSungearEngine/NativeCore/Sources/Core/Memory/Utils.cpp || cmake_object_order_depends_target_NativeCoreTest
+  DEP_FILE = CMakeFiles\NativeCoreTest.dir\Sources\Core\Memory\Utils.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++23
+  INCLUDES = -I"C:/Program Files/Java/jdk-17/include" -I"C:/Program Files/Java/jdk-17/include/win32" -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/glfw/include -ID:/Pixelfield/NativeSungearEngine/NativeCore/libs/graphics/ogl/v46/include -isystem D:/Pixelfield/NativeSungearEngine/NativeCore/libs/glm
+  OBJECT_DIR = CMakeFiles\NativeCoreTest.dir
+  OBJECT_FILE_DIR = CMakeFiles\NativeCoreTest.dir\Sources\Core\Memory
 
 
 # =============================================================================
@@ -109,7 +161,7 @@ build CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/CoreTest.cpp.obj: CXX_COMP
 #############################################
 # Link the executable NativeCoreTest.exe
 
-build NativeCoreTest.exe: CXX_EXECUTABLE_LINKER__NativeCoreTest_Debug CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/CoreTest.cpp.obj | libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a || libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a
+build NativeCoreTest.exe: CXX_EXECUTABLE_LINKER__NativeCoreTest_Debug CMakeFiles/NativeCoreTest.dir/Sources/Core/Logging/Log.cpp.obj CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/Core.cpp.obj CMakeFiles/NativeCoreTest.dir/Sources/Core/Main/CoreTest.cpp.obj CMakeFiles/NativeCoreTest.dir/Sources/Core/Memory/MemoryManager.cpp.obj CMakeFiles/NativeCoreTest.dir/Sources/Core/Memory/Utils.cpp.obj | libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a || libs/glfw/src/libglfw3.a libs/graphics/ogl/v46/libgl46.a
   FLAGS = -g
   LINK_LIBRARIES = libs/glfw/src/libglfw3.a  libs/graphics/ogl/v46/libgl46.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\NativeCoreTest.dir

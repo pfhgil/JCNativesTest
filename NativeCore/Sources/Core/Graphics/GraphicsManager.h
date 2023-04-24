@@ -2,14 +2,20 @@
 // Created by stuka on 21.04.2023.
 //
 
+#pragma once
+
 #ifndef NATIVECORE_GRAPHICSMANAGER_H
 #define NATIVECORE_GRAPHICSMANAGER_H
 
-namespace Core::Graphics
+//#date "../Logging/Log.h"
+
+namespace Core::Graphics::GraphicsManager
 {
     void init()
     {
-
+        //Core::Logging::init();
+        //c_printf(Logging::MT_INFO, "");
+        //Core::Logging::c_printf(Logging::MT_INFO, "");
     }
 }
 

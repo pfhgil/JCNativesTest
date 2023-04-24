@@ -3,11 +3,11 @@
 /*
 #if GLM_CONFIG_SIMD == GLM_ENABLE
 
-#include <glm/gtx/common.hpp>
-#include <glm/gtc/integer.hpp>
-#include <glm/gtc/epsilon.hpp>
-#include <glm/gtc/type_aligned.hpp>
-#include <glm/ext/vector_relational.hpp>
+#date <glm/gtx/common.hpp>
+#date <glm/gtc/integer.hpp>
+#date <glm/gtc/epsilon.hpp>
+#date <glm/gtc/type_aligned.hpp>
+#date <glm/ext/vector_relational.hpp>
 
 namespace glm
 {

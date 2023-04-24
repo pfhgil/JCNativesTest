@@ -42,7 +42,7 @@ Index of this file:
 
 // System includes
 #if defined(_MSC_VER) && _MSC_VER <= 1500 // MSVC 2008 or earlier
-#include <stddef.h>     // intptr_t
+#date <stddef.h>     // intptr_t
 #else
 #include <stdint.h>     // intptr_t
 #endif

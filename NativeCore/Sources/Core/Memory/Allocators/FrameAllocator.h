@@ -2,12 +2,16 @@
 // Created by stuka on 14.04.2023.
 //
 
-#ifndef TEST00_FRAMEALLOCATOR_H
-#define TEST00_FRAMEALLOCATOR_H
+#pragma once
+
+#ifndef NATIVECORE_FRAMEALLOCATOR_H
+#define NATIVECORE_FRAMEALLOCATOR_H
 
 #include "IAllocator.h"
 
-namespace Memory::Allocators
+#include "../../Logging/Log.h"
+
+namespace Core::Memory::Allocators
 {
     class FrameAllocator : public IAllocator
     {
@@ -24,8 +28,10 @@ namespace Memory::Allocators
 
             this->end_region = reinterpret_cast<region>(reinterpret_cast<char*>(this->start_region) + this->total_byte_size);
 
-            std::cout << "frame allocator mem block ptr: " << this->free_region << ", end: " << this->end_region
-                      << ". frame allocator size: " << this->total_byte_size << ", free byte size: " << get_free_byte_size() << std::endl;
+
+            Core::Logging::c_printf(Core::Logging::MessageType::MT_INFO,
+                                    "Frame allocator mem block ptr: %p, "
+                                    "end: %p, total byte size: %llu, free byte size: %llu", this->free_region, this->end_region, this->total_byte_size, get_free_byte_size());
         }
 
     public:
@@ -52,9 +58,10 @@ namespace Memory::Allocators
 
             if(this->free_region == this->end_region || obj_byte_size > get_free_byte_size())
             {
-                std::cout << "Error: Frame allocator out of bounds! The last pointer is returned. Before: "
-                          << this->free_region << ", next: " << this->free_region->next << ". Requested byte size: " << obj_byte_size<< ", free byte size: " << get_free_byte_size() <<
-                          ", elements count: " << this->elements_count << std::endl;
+                Core::Logging::c_printf(Core::Logging::MessageType::MT_ERROR,
+                                        "Frame allocator out of bounds! The last pointer is returned. Last region: %p, next region: %p. "
+                                        "Requested byte size: %llu, free byte size: %llu, elements count: %llu",
+                                        this->free_region, this->free_region->next, obj_byte_size, get_free_byte_size(), this->elements_count);
 
                 return reinterpret_cast<T*>(this->free_region);
             }
@@ -68,12 +75,20 @@ namespace Memory::Allocators
             std::cout << "frame allocator allocated chunk: " << current_free_region << ", next: "
             << current_free_region->next << ", free size: " << get_free_byte_size() << ", obj size: "
             << obj_byte_size << ", end: " << this->end_region << std::endl;
-             */
+            */
 
             this->elements_count++;
 
             return new(reinterpret_cast<T*>(current_free_region))T(std::forward<Params>(params)...);
         }
+
+        /*
+        template <typename T, typename... Params>
+        T* allocate(Params&&... params)
+        {
+            return this->allocate<T>(-1, params...);
+        }
+         */
 
         void deallocate_mem_block()
         {
@@ -89,4 +104,4 @@ namespace Memory::Allocators
 }
 
 
-#endif //TEST00_FRAMEALLOCATOR_H
+#endif //NATIVECORE_FRAMEALLOCATOR_H
